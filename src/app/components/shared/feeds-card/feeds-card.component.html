@@ -1,0 +1,97 @@
+<div>
+    <mat-card>
+        <div class="flex space-between-center padding-5px-15px">
+            <div class="flex gap-05em center-col">
+                <img src="myphoto.jpg" class="square-20px border-r" alt="">
+                <p class="no-margin font-8px font-bold">Zamangema Nene</p>
+                <p class="font-8px no-margin">likes this</p>
+            </div>
+            <div class="flex gap-05em">
+                <mat-icon
+                    class="pointer padding-3px hover-bg-l-grey hover-border-r flex center-center font-20px">more_horiz</mat-icon>
+                <mat-icon
+                    class="pointer padding-3px hover-bg-l-grey hover-border-r flex center-center font-20px">close</mat-icon>
+            </div>
+        </div>
+        <hr class="full-width no-margin">
+        <div class="flex space-between-center padding-10px-15px">
+            <div class="flex center-col gap-05em">
+                <div>
+                    <img src="welcome2.2.png" class="square-50px border-r" alt="">
+                </div>
+                <div>
+                    <div>
+                        <small class="font-bold">Thingolwethu Makhathini</small>
+
+                    </div>
+                    <div class="smaller-f">
+                        <small>&Atilde;News at newslivesa</small>
+                    </div>
+                    <div class="flex center-col gap-02em">
+                        <small>5d</small>
+                        <p class="flex no-margin center-center"> . </p>
+                        <mat-icon>public </mat-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="flex center-center pointer hover-border-r-10px padding-5px hover-bg-l-b">
+                <mat-icon class="color-b font-15px font-bold flex center-center">add</mat-icon>
+                <p class="color-b font-bold font-15px no-margin">Follow</p>
+            </div>
+        </div>
+        <div class="padding-10px-15px">
+            <p class="no-margin small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni officiis molestias
+                minima tempore cupiditate voluptates sunt? Aut amet possimus, vero ducimus neque perferendis rerum eius.
+                Quis officia itaque saepe at?</p>
+        </div>
+        <div>
+            <img class="full-width" src="union.jpeg" alt="">
+        </div>
+        <div class="flex space-between-center padding-10px-15px">
+            <div class="flex center-center">
+                <div class="flex">
+                    @for (reaction of reactions; track reaction) {
+                    <div class="padding-5px border-w-2px pointer bg-light-brown flex center-center border-r relative"
+                        [ngClass]="{'absolute right-10px' : $index == 1,  'absolute left-53px' : $index == 2}">
+                        <img class="square-15px" [src]="reaction.url" alt="">
+                    </div>
+                    }
+                </div>
+                <small class="font-10px margin-l-15px">2000</small>
+            </div>
+            <div class="flex gap-02em">
+                <div class="hover pointer">
+                    <small>20 comments</small>
+                </div>
+                <div class="hover pointer">
+                    <small>2 repost</small>
+                </div>
+            </div>
+        </div>
+        <div class="padding-10px-15px">
+            <hr class="full-width no-margin">
+        </div>
+        <div class="flex space-between-center padding-10px-15px">
+            <button [matMenuTriggerFor]="reaction" #reactionTrigger="matMenuTrigger" id="trigger" (mouseenter)='openMenu()' (mouseout)='closeMenu()'
+                class="pointer flex center-center no-border bg-inherit hover-bg-grey gap-02em flex-1 padding-10px-15px  hover-border-r-10px">
+                <img src="like1.png" class="square-25px" alt="">
+                <small class="poppins">like</small>
+            </button>
+            @for (action of postActions; track action) {
+            <button
+                class="pointer flex center-center no-border bg-inherit hover-bg-grey gap-02em flex-1 padding-10px-15px  hover-border-r-10px">
+                <img [src]="action.image" class="square-25px" alt="">
+                <small class="poppins">{{action.name}}</small>
+            </button>
+            }
+        </div>
+        <!-- Menu item for reactions -->
+        <mat-menu #reaction="matMenu" class="flex reactions">
+            @for (item of reactions1; track item) {
+            <button mat-menu-item>
+                <img class="square-20px" [src]="item.url" alt="">
+            </button>
+            }
+        </mat-menu>
+    </mat-card>
+</div>

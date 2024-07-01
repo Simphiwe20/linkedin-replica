@@ -1,0 +1,32 @@
+
+.menu_b {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.menu {
+    width: 80px;
+    color: #757575;
+    font-size: smaller;
+    &:hover {
+        color: black;
+    }
+}
+
+
+.width-80px {
+    width: 80px;
+}
+
+.width-70 {
+    width: 65%;
+}
+.btn-join {
+    width: 100px;
+    height: 48px;
+    border-radius: 30px; 
+    border: none;
+    &:hover {
+        background-color: #bebebe;
+    }
+}

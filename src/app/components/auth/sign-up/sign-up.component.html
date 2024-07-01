@@ -1,0 +1,50 @@
+<div class="full-height poppins padding-l-r-20px">
+    <div>
+        <div class="flex center-col ">
+            <h2 class="color-b margin-t-b-10px">Linked</h2>
+            <img class="icon " src="linkedin.png">
+        </div>
+        <div class="flex center-center column">
+            <mat-card class="half-width">
+                <mat-card-content>
+                    <h1 class="margin-t-b-10px">Sign Up</h1>
+                    <h5 class="no-margin color-g">Create an account and Stay updated on your professional world</h5>
+                    <div class="flex">
+                        <form class="flex column full-width">
+                            <div class="flex gap-05em wrap">
+                                <mat-form-field class="width-45 margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Fisrt Name">
+                                </mat-form-field>
+                                <mat-form-field class="width-45 margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Last Name">
+                                </mat-form-field>
+                            </div>
+                            <div class="flex gap-05em">
+                                <mat-form-field class=" margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Email">
+                                </mat-form-field>
+                                <mat-form-field class="margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Phone number">
+                                </mat-form-field>
+                            </div>
+                            <div class="flex gap-05em">
+                                <mat-form-field class=" margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Password">
+                                </mat-form-field>
+                                <mat-form-field class="margin-t-15px flex-1">
+                                    <input appearance="fill" matInput placeholder="Confirm Password">
+                                </mat-form-field>
+                            </div>
+                            
+                            <h5 class="color-b no-margin">Forgot password?</h5>
+                            <button class="standard-btn primary-btn color-w margin-t-15px pointer" type="button">Log In</button>
+                        </form>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <div>
+            <h5 class="color-g">Already have an account? <span class="color-b pointer" (click)="signIn()">Sign In</span></h5>
+            </div>
+        </div>
+    </div>
+</div>

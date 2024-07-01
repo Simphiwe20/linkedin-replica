@@ -1,0 +1,16 @@
+<div class=" flex space-between-center">
+    <div class="logo flex center-col">
+        <h2 class="color-b">Linked</h2>
+        <img class="icon" src="linkedin.png" alt="logo">
+    </div>
+    <div class="flex center-center width-70">
+        @for ( menu of menuItems; track menu.icon ) { 
+            <div class="flex column center-center menu" [ngClass] = "{'menu_b' : $index === menuItems.length -1}">
+                <mat-icon class=" pointer">{{menu.icon}}</mat-icon>
+                <small class=" pointer">{{menu.itemName}}</small>
+            </div>
+        }
+        <p class="margin-l-15px content-center no-margin btn-join text-center pointer">Join now</p>
+        <button class="margin-l-15px btn-border-b standard-btn pointer">Sign In</button>
+    </div>
+</div>

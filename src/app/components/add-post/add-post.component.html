@@ -1,0 +1,21 @@
+<div>
+    <mat-card appearance="outlined" class="padding-10px">
+        <div class="flex column gap-05em post-input">
+            <div class="flex gap-1em">
+                <img class="border-r square-50px" src="myphoto.jpg" alt="">
+                <div class="border-grey bg-grey border border-r-30px flex-1 flex center-col padding-10px">
+                    <p class="no-margin">Start a post, try writing with AI</p>
+                </div>
+            </div>
+            <div class="flex space-between-center">
+                @for (item of items; track item) {
+                    <div class="hover-bg-grey pointer flex gap-0_5em center-center hover-border-r-10px  padding-10px">
+                        <mat-icon [ngClass]="item.color">{{item.icon}}</mat-icon>
+                        <small class="poppins">{{item.name}}</small>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </mat-card>
+</div>

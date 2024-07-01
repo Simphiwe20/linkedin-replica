@@ -1,0 +1,208 @@
+<div >
+    <div class="flex center-col column">
+        <div class="width-90 ">
+            <app-welcome-toolbar></app-welcome-toolbar>
+        </div>
+    </div>
+    <div class="flex flex-end">
+        <div class="width-95 flex">
+            <div class="flex full-width">
+                <div class="width-45">
+                    <h1 class="color-brown h1">Welcome to your professional community</h1>
+                    <div class="standard-btn gap-05em width-80 flex center-center border-grey">
+                        <img src="google.svg" class="google-icon">
+                        <h5 class="color-g no-margin">Sign in with Google</h5>
+                    </div>
+                    <p class="width-80 text-center smaller-f">By clicking Continue to join or sign in, you agree to
+                        LinkedIn’s <span class="color-b">Agreement</span> , <span class="color-b">Privacy Policy</span>,
+                        and
+                        <span class="color-b">Cookie Policy</span>.
+                    </p>
+                    <div class="flex center-center gap-1em width-80">
+                        <div class="half-width">
+                            <hr>
+                        </div>
+                        <small>Or</small>
+                        <div class="half-width">
+                            <hr>
+                        </div>
+
+                    </div>
+                    <div class="width-80">
+                        <app-welcom-sign-in></app-welcom-sign-in>
+                    </div>
+                </div>
+                <div class="width-55 flex center-col welcome1">
+                    <img src="welcome1.svg" class="img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex column center-col gap-4em">
+        <div class="width-90 flex column gap-2em">
+            <div class="flex">
+                <div class="width-45">
+                    <div class="width-90">
+                        <h1 class="h1"> Explore collaborative articles </h1>
+                        <p class="p-font poppins">We’re unlocking community knowledge in a new way. Experts add insights
+                            directly into each article, started with the help of AI.</p>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <app-items [items]="firstItems" number="first"></app-items>
+                </div>
+            </div>
+            <div class=" flex">
+                <div class="width-45">
+                    <h1 class="h1">Find the right job or internship for you</h1>
+                </div>
+                <div class="flex-1">
+                    <h3 class="p-font">SUGGESTED SEARCHES</h3>
+                    <app-items [items]="secondItems" number="first"></app-items>
+                </div>
+            </div>
+        </div>
+        <div class="full-width flex bg-light-brown heigth-100px flex center-center">
+            <div class="width-90 flex center-center">
+                <div class="width-45">
+                    <h1 class="h1 p-font no-margin pointer width-80">Post your job for millions of people to see</h1>
+                </div>
+                <div class="flex-1">
+                    <small class="padding-20px p-font color-b border-r-30px border-b">Post job</small>
+                </div>
+            </div>
+        </div>
+        <div class="width-90 flex">
+            <div class="width-45">
+                <div class="width-90">
+                    <h1 class="h1 no-margin">Discover the best software tools</h1>
+                    <h3 class="no-margin p-font-300">Connect with buyers who have first-hand experience to find the best
+                        products for you.</h3>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div>
+                    <h3 class="p-font">SUGGESTED TOOLS</h3>
+                    <app-items [items]="thirdItems" number="first"></app-items>
+                </div>
+            </div>
+        </div>
+        <div class="width-90 heigth-100px flex center-center">
+            <div class="width-45">
+                <div class="width-90">
+                    <h1 class="h1 no-margin">Keep your mind sharp with games</h1>
+                    <h3 class="no-margin p-font-300">Take a break and reconnect with your network through quick daily
+                        games.
+                    </h3>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div>
+                    <app-items [items]="forthItems" number="first"></app-items>
+                </div>
+            </div>
+        </div>
+        <div>
+            <app-slider></app-slider>
+        </div>
+        <div class="vh-100 full-width flex center-center">
+            <div class="width-90 flex center-col gap-8em">
+                <div class="width-40 flex column gap-1em">
+                    <div class="img-container">
+                        <img src="welcome3.svg" alt="">
+                    </div>
+                    <h1 class="h1 p-font no-margin">Connect with people who can help</h1>
+                    <div class="border-r width-70 pointer">
+                        <p class="p-font text-center no-margin color-d-g border-g border-r-30px padding-20px">Find
+                            people
+                            you know</p>
+                    </div>
+                </div>
+                <div class="width-40 flex column gap-1em">
+                    <div class="img-container">
+                        <img src="welcome4.svg" alt="">
+                    </div>
+                    <h1 class="h1 p-font no-margin">Learn the skills you need to succeed</h1>
+                    <form class="width-70">
+                        <mat-form-field >
+                            <mat-label>Choose a topic to learn about</mat-label>
+                            <mat-select>
+                                @for (topic of topics; track topic) {
+                                <mat-option (click)="selectedTopic(topic)"
+                                    [value]="topic.name">{{topic.name}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="vh-120 flex center-center gap-4em full-width">
+            <div class="flex-1 vh-110 column col-center-end flex bg-light-brown">
+                <div class="width-80 flex column gap-1em">
+                    <h1 class="h1-300 color-brown no-margin">Who is LinkedIn for?</h1>
+                    <h1 class="h1-200 no-margin">Anyone looking to navigate their professional life.</h1>
+                    @for(find of finds; track find) {<div
+                        class="flex space-between-center pointer padding-l-r-20px bg-light-g width-70 height-60px"
+                        [ngClass]="{'margin-b-35px': $index === finds.length -1}">
+                        <p class="no-margin poppins  p-font">{{find.name}}</p>
+                        <mat-icon>chevron_right</mat-icon>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="width-40 full-height">
+                <div class="full-height overflow-h">
+                    <img class="full-height overflow-h" src="welcome5.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="vh-120 full-width">
+            <div class="bg-cloud flex center-col column full-width margin-t-15px">
+                <div class="width-90 flex column gap-1em">
+                    <h1 class="h1 no-margin">Join your colleagues, classmates, and friends on LinkedIn.</h1>
+                    <div class="standard-btn primary-btn flex width-100px center-center bg">
+                        <p class="no-margin pointer color-w">Get Started</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-image full-width ">
+
+            </div>
+
+        </div>
+        <div class="vh-70 bg-light-brown flex column center-col full-width">
+            <div class="width-90 flex space-between margin-t-2em">
+                <div class="logo flex center-col heigth-30px">
+                    <h2 class="color-b">Linked</h2>
+                    <img class="icon" src="linkedin.png" alt="logo">
+                </div>
+                <div class="flex width-70">
+                    @for (itemFooters of footers; track itemFooters ) {
+                    <div class=" flex column gap-05em flex-1">
+                        <p class="no-margin flex">{{getObj($index)}}</p>
+                        @for (item of itemFooters[getObj($index)]; track item) { <div class=" flex column gap-05em">
+                            <small class="no-margin pointer hover color-g">{{item.name}}</small>
+                        </div>
+                        }
+
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex column center-col height-50px">
+        <div class="width-90 flex gap-05em margin-t-10px">
+            <div class="flex center-col">
+                <small><b>Linked</b></small>
+                <img class="square-20px" src="linkedin.png" alt="">
+            </div>
+            <small>&copy; {{getYear()}}</small>
+            @for (item of lastFooter; track item) {
+            <small class="x-small-fcolor-g hover pointer">{{item.name}}</small>
+            }
+        </div>
+    </div>
+
+</div>

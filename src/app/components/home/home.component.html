@@ -1,0 +1,30 @@
+<div class="flex gap-1em">
+    <div class="width-20">
+        <app-card1></app-card1>
+    </div>
+    <div class="flex-1 flex column">
+        <app-add-post></app-add-post>
+        <div class="flex center-center">
+            <div class="flex-1">
+                <hr class="">
+            </div>
+            <small class="smaller-f">Sort by:</small>
+            <div >
+                <button mat-button matSuffix="arrow_drop_down" class="btn-no-style flex center-center pointer" [matMenuTriggerFor]="menu">
+                    {{sortBy}}
+                    <mat-icon class="flex center-center">arrow_drop_down</mat-icon>
+                </button>
+                <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+            </div>
+            <mat-menu #menu="matMenu">
+                @for (item of sortItems; track item) {
+                    <button mat-menu-item (click) = "sort(item.name)" [ngClass]="{'border-l-2px' : item.name === sortBy}">{{item.name}}</button>
+                }
+            </mat-menu>
+        </div>
+        <app-feeds-card></app-feeds-card>
+    </div>
+    <div class="width-27">
+        <app-card2></app-card2>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="flex center-center bg-w ">
+    <div class="width-90 heigth-56px flex center-col">
+        <div class="width-40 flex center-col gap-05em ">
+            <div class="icon">
+                <img class="full-width full-height" src="linkedin1.png" alt="">
+            </div>
+            <form class="height-35px width-70">
+                <div class="search full-width">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <input matInput placeholder="Search" value="">
+                    </mat-form-field>
+
+                </div>
+            </form>
+        </div>
+        <div class=" flex center-col border-r-grey">
+            @for (menu of menus; track menu) {
+            <div [routerLink]="menu.routes" routerLinkActive="active-menu " class="flex border-w column center-center hover-b color-g-b pointer menu smaller-f width-80px">
+                <mat-icon>{{menu.icon}}</mat-icon> 
+                <small class="poppins">{{menu.name}}</small>
+            </div>
+            }
+            <div class="flex column pointer hover-b  color-g-b center-center smaller-f width-80px">
+                <div class="square-25px ">
+                    <img class="border-r full-height full-width" src="myphoto.jpg" alt="">
+                </div>
+                <div class="flex center-center">
+                    <small class="poppins width-17px text-center">Me</small>
+                    <mat-icon>arrow_drop_down</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="width-20 margin-l-15px flex gap-05em">
+            <div class="flex column pointer hover-b color-g-b center-center smaller-f width-80px ">
+                <mat-icon >apps</mat-icon>
+                <div class="flex center-center">
+                    <small class=" poppins text-center">Business</small>
+                    <mat-icon>arrow_drop_down</mat-icon>
+                </div>
+            </div>
+            <div>
+                <small class="pointer poppins text-center d-block color-brown underline">Unlock Premium 1 month free</small>
+            </div>
+        </div>
+    </div>
+</div>

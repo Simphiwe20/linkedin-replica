@@ -1,0 +1,77 @@
+body {
+    position: relative;
+}
+
+
+.h1 {
+    font-size: xxx-large;
+    font-weight:lighter;
+}
+
+.welcome1 {
+    overflow: hidden;
+    position: relative;
+}
+
+.img {
+    left: 70px;
+    position: absolute;
+    overflow: hidden;
+    height: 600px;
+}
+ 
+.img-container {
+    height: 280px;
+    width: 350px;
+}
+
+.bg-image {
+    background-image: url('../../../../../public/welcome-bg.jpeg');
+    height: 70%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bg-cloud {
+    background-image: url('../../../../../public/bg-cloud.jpeg');
+    height: 30%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h1-200 {
+    font-size: xx-large;
+    font-weight:200;
+}
+
+.h1-300 {
+    font-size: xx-large;
+    font-weight:400;
+}
+
+.height-60px {
+    height: 60px;
+}
+
+.vh-70 {
+    height: 70vh;
+}
+
+.width-100px {
+    width: 120px;
+}
+
+.width-95 {
+    width: 95%;
+}
+
+.width-45 {
+    width: 45%;
+}
+
+.width-55 {
+    width: 55%;
+}
