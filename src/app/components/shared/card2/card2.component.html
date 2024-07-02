@@ -1,6 +1,13 @@
 <div>
-    <mat-card class="padding-10px">
-        <p>Card 2</p>
-
+    <mat-card class="padding-10px gap-1em">
+        <div class="flex space-between-center">
+            <p class="no-margin">Add to feeds</p>
+            <mat-icon class="pointer">infor</mat-icon>
+        </div>
+        <div class="flex column gap-1em">
+            @for(num of [1, 2, 3]; track num) {
+                <app-follow-card></app-follow-card>
+            }
+        </div>
     </mat-card>
 </div>

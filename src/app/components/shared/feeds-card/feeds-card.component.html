@@ -1,4 +1,4 @@
-<div>
+<div class="margin-b-35px">
     <mat-card>
         <div class="flex space-between-center padding-5px-15px">
             <div class="flex gap-05em center-col">
@@ -72,7 +72,7 @@
             <hr class="full-width no-margin">
         </div>
         <div class="flex space-between-center padding-10px-15px">
-            <button [matMenuTriggerFor]="reaction" #reactionTrigger="matMenuTrigger" id="trigger" (mouseenter)='openMenu()' (mouseout)='closeMenu()'
+            <button [matMenuTriggerFor]="reaction" #reactionTrigger="matMenuTrigger" id="trigger" (mouseenter)='openMenu()' [ngClass]="{'bg-light-g' : isMenuOpened}"
                 class="pointer flex center-center no-border bg-inherit hover-bg-grey gap-02em flex-1 padding-10px-15px  hover-border-r-10px">
                 <img src="like1.png" class="square-25px" alt="">
                 <small class="poppins">like</small>

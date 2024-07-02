@@ -52,6 +52,7 @@ export class FeedsCardComponent implements AfterViewInit {
 
   openMenu(): void {
     this.trigger.openMenu()
+    this.isMenuOpened = true
   }
 
   closeMenu(): void {

@@ -1,0 +1,19 @@
+<div>
+    <mat-card class="padding-10px">
+        <p class="poppins no-margin">Manage my network</p>
+        <div class="color-g">
+            @for(item of items; track item) {
+            <div class=" hover-bg-grey pointer full-width">
+                <div class="flex space-between-center padding-10px">
+                    <div class="flex gap-05em">
+                        <mat-icon class="color-g">{{item.icon}}</mat-icon>
+                        <p class="no-margin">{{item.name}}</p>
+                    </div>
+                    <p class="no-margin">{{item.count}}</p>
+                </div>
+            </div>
+            
+                }
+        </div>
+    </mat-card>
+</div>
