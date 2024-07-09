@@ -1,0 +1,19 @@
+<div>
+    <mat-card class="padding-20px">
+        <div class="flex column gap-1em">
+            @for (item of items; track item) {
+            <div class="flex gap-1em center-col poppins pointer ">
+                <mat-icon class="color-grey">{{item.icon}}</mat-icon>
+                <small class="no-margin poppins color-grey">{{item.itemName}}</small>
+            </div>
+            }
+        </div>
+    </mat-card>
+    <div class="padding-10px btn-c-b">
+    <button class="full-width " mat-stroked-button>
+        <mat-icon>edit_square</mat-icon>
+        Post a free job
+    </button>
+
+    </div>
+</div>

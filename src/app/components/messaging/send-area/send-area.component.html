@@ -1,0 +1,28 @@
+<div>
+    <form class="flex text-area gap-05em padding-10px">
+        <mat-form-field class="flex-1">
+            <textarea matInput placeholder="Write a message..."></textarea>
+        </mat-form-field>
+        <!-- <div class="padding-5px hover-bg-l-grey border-r pointer flex center-center"> -->
+            <mat-icon class="padding-10px hover-bg-l-grey border-r pointer flex center-center">keyboard_arrow_down</mat-icon>
+        <!-- </div> -->
+    </form>
+    <hr class="no-margin">
+    <div class="flex space-between-center padding-10px">
+        <div class="flex">
+            @for (icon of icons; track icon) {
+            <div class="padding-5px hover-bg-l-grey border-r pointer flex center-center">
+                <mat-icon>{{icon.name}}</mat-icon>
+            </div>
+            }
+        </div>
+        <div class="flex center-center gap-05em">
+            <div class="padding-l-r-10px border-r-30px pointer bg-b color-w flex center-center">
+                <small class="poppins">send</small>
+            </div>
+            <div class="padding-5px hover-bg-l-grey border-r pointer flex center-center">
+                <mat-icon>more_horiz</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>

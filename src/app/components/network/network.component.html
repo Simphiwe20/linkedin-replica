@@ -1,5 +1,5 @@
 <div class="flex gap-1em">
-    <div class="width-30">
+    <div class="width-26">
         <app-card3></app-card3>
     </div>
     <div class="flex-1 flex column gap-1em">
@@ -11,15 +11,19 @@
                 </div>
             </mat-card>
         </div>
-        <div>
+        <div class="margin-b-35px">
             <mat-card>
                 <div class="padding-20px flex column gap-1em">
                     <div class="flex space-between-center">
                         <small>Based on your current activity</small>
                         <p class="no-margin">See all</p>
                     </div>
-                    <div>
-                        <app-card4></app-card4>
+                    <div class="flex wrap gap-06em">
+                        @for (profile of profiles; track profile) {
+                        <div class="width-23">
+                            <app-card4></app-card4>
+                        </div>
+                        }
                     </div>
                 </div>
             </mat-card>

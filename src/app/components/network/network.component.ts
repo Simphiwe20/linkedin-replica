@@ -15,4 +15,6 @@ import { Card4Component } from '../shared/card4/card4.component';
 })
 export class NetworkComponent {
 
+  profiles: any[]  =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 }

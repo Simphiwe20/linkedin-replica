@@ -1,0 +1,66 @@
+<div class="full-height">
+    <mat-card class=" flex column full-height">
+        <div class="padding-10px flex gap-1em space-between-center">
+            <div class="flex center-center gap-1em">
+                <p class="poppins no-margin">Messaging</p>
+                <form class="height-35px">
+                    <div class="search ">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <input matInput placeholder="Search" value="">
+                            <mat-icon matPrefix>search</mat-icon>
+                        </mat-form-field>
+
+                    </div>
+                </form>
+            </div>
+            <div class="flex gap-1em">
+                <div class="padding-5px hover-bg-l-grey border-r pointer flex center-center">
+                    <mat-icon >more_horiz</mat-icon>
+                </div>
+                <div class="padding-5px hover-bg-l-grey border-r pointer flex center-center">
+                    <mat-icon >edit_square</mat-icon>
+                </div>
+            </div>
+        </div>
+        <hr class="no-margin full-width">
+        <div class="padding-10px flex gap-1em">
+            <form class="options">
+                <mat-form-field>
+                    <!-- <mat-label>{{selectedOpt}}</mat-label> -->
+                    <mat-select [(ngModel)]="selectedOpt" name="options">
+                        @for (option of msgTypes; track option) {
+                        <mat-option [value]="selectedOpt">{{option.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </form>
+            <hr class="no-margin height-35px">
+            <div class="flex align-center gap-1em">
+                @for (option of msgOptions; track option) {
+                <div class="padding-10px hover-bg-grey border-r-30px border-blac pointer">
+                    <p class="no-margin">{{option.name}}</p>
+                </div>
+                }
+            </div>
+        </div>
+        <hr class="no-margin">
+        <div class="flex flex-1  scroll-height">
+            <div class="width-40 overflow-auto">
+                @for(person of [1, 2, 3, 4, 5]; track person) {
+                    <app-person></app-person>
+                }
+            </div>
+            <div class="flex-1">
+                <div>
+                    <app-chat-toolbar></app-chat-toolbar>
+                </div>
+                <div class="height-30 overflow-auto">
+                    <app-chats></app-chats>
+                </div>
+                <div>
+                    <app-send-area></app-send-area>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
