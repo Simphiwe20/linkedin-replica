@@ -10,15 +10,27 @@
                     <h1 class="margin-t-b-10px">Sign in</h1>
                     <h5 class="no-margin color-g">Stay updated on your professional world</h5>
                     <div class="flex">
-                        <form class="flex column full-width">
-                            <mat-form-field class="full-width margin-t-15px">
-                                <input appearance="fill" matInput placeholder="Email or Phone">
-                            </mat-form-field>
-                            <mat-form-field class="ful-width">
-                                <input appearance="fill" matInput placeholder="Password">
-                            </mat-form-field>
+                        <form class="flex column full-width" #loginForm="ngForm">
+                            <div class="height-85px">
+                                <mat-form-field class="full-width">
+                                    <input [(ngModel)]="userCredentials.email" #email="ngModel" name="email"
+                                        appearance="fill" matInput placeholder="Email or Phone" required>
+                                </mat-form-field>
+                                <mat-error
+                                    *ngIf="isSubmitted && loginForm.form.invalid && loginForm.form['controls']['email']?.errors?.['required']">Email
+                                    Address is required</mat-error>
+                            </div>
+                            <div class="height-85px">
+                                <mat-form-field class="full-width">
+                                    <input appearance="fill" [(ngModel)]="userCredentials.password" #email="ngModel" name="password" matInput placeholder="Password" required>
+                                </mat-form-field>
+                                <mat-error
+                                    *ngIf="isSubmitted && loginForm.form.invalid && loginForm.form['controls']['password']?.errors?.['required']">Password
+                                     is required</mat-error>
+                            </div>
                             <h5 class="color-b no-margin">Forgot password?</h5>
-                            <button class="standard-btn primary-btn color-w margin-t-15px" type="button">Sign in</button>
+                            <button class="standard-btn primary-btn pointer color-w margin-t-15px"
+                                (click)="submit(loginForm)" type="button">Sign in</button>
                             <div class="flex center-center gap-05em">
                                 <div class="half-width">
                                     <hr>
@@ -37,7 +49,7 @@
                     </div>
                 </mat-card-content>
             </mat-card>
-            <h5 class="color-g" >New to LinkedIn? <a class="color-b pointer" (click)="register()">Join Now</a></h5>
+            <h5 class="color-g">New to LinkedIn? <a class="color-b pointer" (click)="register()">Join Now</a></h5>
         </div>
     </div>
 </div>

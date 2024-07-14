@@ -177,6 +177,10 @@ body {
     height: 56px;
 }
 
+.height-85px {
+    height: 85px;
+}
+
 .heigth-30px {
     height: 30px;
 }
@@ -752,6 +756,13 @@ body {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background-color: #fcfcfc !important;
     border: 1px solid $primary-color3 !important;
+}
+
+
+// Input of the mat-form field
+.mat-mdc-form-field-bottom-align::before {
+    content: unset !important;
+    height: 0px !important;
 }
 
 .search {
