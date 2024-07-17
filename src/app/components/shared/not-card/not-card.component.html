@@ -1,0 +1,24 @@
+<div>
+    <mat-card class="full-width margin-b-35px">
+        @for (not of [1, 2, 3, 4, 5, 6]; track not) {
+        <div>
+            <div class="flex height-85px padding-20px space-between-center">
+                <div class="flex center-center gap-05em">
+                    <div class="square-50px">
+                        <img class="full-height full-width" src="queryImage.jpg" alt="">
+                    </div>
+                    <p class="no-margin">Glorious Nongema <span class="small-f">reposted a photo.</span></p>
+                </div>
+                <div class="flex column center-center">
+                    <small class="font-10px">22min</small>
+                    <div class="padding-5px border-r hover-bg-grey pointer flex center-center">
+                        <mat-icon>more_horiz</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <hr class="no-margin">
+        </div>
+
+        }
+    </mat-card>
+</div>

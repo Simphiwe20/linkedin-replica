@@ -10,40 +10,80 @@
                     <h1 class="margin-t-b-10px">Sign Up</h1>
                     <h5 class="no-margin color-g">Create an account and Stay updated on your professional world</h5>
                     <div class="flex">
-                        <form class="flex column full-width">
-                            <div class="flex gap-05em wrap">
-                                <mat-form-field class="width-45 margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Fisrt Name">
-                                </mat-form-field>
-                                <mat-form-field class="width-45 margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Last Name">
-                                </mat-form-field>
+                        <form class="flex column full-width" [formGroup]="registerForm">
+                            <div class="flex gap-05em wrap  margin-t-15px height-70px">
+                                <div class="flex column flex-1">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="firstName" appearance="fill" matInput
+                                            placeholder="First Name">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('firstName')?.hasError('required')) {
+                                    <small class="error-color">First name is required</small>
+                                    }
+                                </div>
+                                <div class="flex column flex-1">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="lastName" appearance="fill" matInput
+                                            placeholder="Last Name">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('lastName')?.hasError('required')) {
+                                    <small class="error-color">First name is required</small>
+                                    }
+                                </div>
                             </div>
-                            <div class="flex gap-05em">
-                                <mat-form-field class=" margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Email">
-                                </mat-form-field>
-                                <mat-form-field class="margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Phone number">
-                                </mat-form-field>
+                            <div class="flex gap-05em height-70px">
+                                <div class="flex-1 flex column">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="email" appearance="fill" matInput placeholder="Email">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('email')?.hasError('required')) {
+                                    <small class="error-color">Email is required</small>
+                                    }
+                                </div>
+                                <div class="flex-1 flex column">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="phoneNumber" appearance="fill" matInput
+                                            placeholder="Phone number">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('phoneNumber')?.hasError('required')) {
+                                    <small class="error-color">Phone number is required</small>
+                                    }
+
+                                </div>
                             </div>
-                            <div class="flex gap-05em">
-                                <mat-form-field class=" margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Password">
-                                </mat-form-field>
-                                <mat-form-field class="margin-t-15px flex-1">
-                                    <input appearance="fill" matInput placeholder="Confirm Password">
-                                </mat-form-field>
+                            <div class="flex gap-05em height-70px">
+                                <div class="flex-1 flex column">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="password" appearance="fill" matInput
+                                            placeholder="Password">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('password')?.hasError('required')) {
+                                        <small class="error-color">Password is required</small>
+                                        }
+
+                                </div>
+                                <div class="flex-1 flex column">
+                                    <mat-form-field class="height-50px">
+                                        <input formControlName="confirmPassword" appearance="fill" matInput
+                                        placeholder="Confirm Password">
+                                    </mat-form-field>
+                                    @if(isSubmitted && registerForm.get('confirmPassword')?.hasError('required')) {
+                                        <small class="error-color">Password is required</small>
+                                        }
+
+                                </div>
                             </div>
-                            
+
                             <h5 class="color-b no-margin">Forgot password?</h5>
-                            <button class="standard-btn primary-btn color-w margin-t-15px pointer" type="button">Log In</button>
+                            <button class="standard-btn primary-btn color-w margin-t-15px pointer" (click)="submit()"
+                                type="button">Log In</button>
                         </form>
                     </div>
                 </mat-card-content>
             </mat-card>
             <div>
-            <h5 class="color-g">Already have an account? <span class="color-b pointer" (click)="signIn()">Sign In</span></h5>
+                <h5 class="color-g">Already have an account? <span class="color-b pointer" (click)="signIn()">Sign
+                        In</span></h5>
             </div>
         </div>
     </div>
