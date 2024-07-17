@@ -193,6 +193,10 @@ body {
     height: 65px;
 }
 
+.height-70px {
+    height: 70px;
+}
+
 .icon {
     width: 35px;
     height: 35px;
@@ -378,6 +382,10 @@ body {
 
 .color-light-brown {
     color: $primary-color6;
+}
+
+.error-color {
+    color: red;
 }
 
 .bg-light-brown {
@@ -668,7 +676,7 @@ body {
 }
 
 .smaller-f {
-    font-size: smaller;
+    font-size: smaller !important;
 }
 
 .x-small-f {
@@ -859,4 +867,10 @@ body {
     .mat-mdc-form-field-bottom-align::before {
         content: unset;
     }
+}
+
+// child components
+
+app-not-setting-card {
+    position: fixed;
 }

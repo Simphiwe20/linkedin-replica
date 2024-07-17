@@ -1,1 +1,20 @@
-<p>notifications works!</p>
+<div class="flex gap-1em">
+    <div class="width-20 relative">
+        <app-not-setting-card></app-not-setting-card>
+    </div>
+    <div class="flex-1 flex column gap-1em">
+        <div>
+            <mat-card>
+                <div class="flex padding-20px gap-1em">
+                    @for (option of notOptions; track option) {
+                        <small class="no-margin poppins border-r-30px border-grey padding-5px-10px hover-bg-grey pointer">{{option.name}}</small>
+                    }
+                </div>
+            </mat-card>
+        </div>
+        <app-not-card></app-not-card>
+    </div>
+    <div class="width-27 relative">
+        <app-footer></app-footer>
+    </div>
+</div>
