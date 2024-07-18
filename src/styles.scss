@@ -163,7 +163,9 @@ body {
     width: 27%;
 }
 
-
+.width-250px {
+    width: 250px;
+}
 
 .heigth-100px {
     height: 250px;
@@ -869,8 +871,14 @@ body {
     }
 }
 
+.profile-menu {
+    .mat-mdc-menu-content {
+        background-color: white !important;
+    }
+}
+
 // child components
 
-app-not-setting-card {
-    position: fixed;
-}
+// app-not-setting-card {
+//     position: fixed;
+// }
