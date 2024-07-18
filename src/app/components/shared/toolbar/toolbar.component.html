@@ -15,12 +15,13 @@
         </div>
         <div class=" flex center-col border-r-grey">
             @for (menu of menus; track menu) {
-            <div [routerLink]="menu.routes" routerLinkActive="active-menu " class="flex border-w column center-center hover-b color-g-b pointer menu smaller-f width-80px">
-                <mat-icon>{{menu.icon}}</mat-icon> 
+            <div [routerLink]="menu.routes" routerLinkActive="active-menu "
+                class="flex border-w column center-center hover-b color-g-b pointer menu smaller-f width-80px">
+                <mat-icon>{{menu.icon}}</mat-icon>
                 <small class="poppins">{{menu.name}}</small>
             </div>
             }
-            <div class="flex column pointer hover-b  color-g-b center-center smaller-f width-80px">
+            <button  [matMenuTriggerFor]="profile" class="flex bg-w no-border column pointer hover-b  color-g-b center-center smaller-f width-80px">
                 <div class="square-25px ">
                     <img class="border-r full-height full-width" src="myphoto.jpg" alt="">
                 </div>
@@ -28,18 +29,22 @@
                     <small class="poppins width-17px text-center">Me</small>
                     <mat-icon>arrow_drop_down</mat-icon>
                 </div>
-            </div>
+            </button>
+            <mat-menu #profile="matMenu" class="profile-menu" xPosition="before">
+                <app-profile></app-profile>
+            </mat-menu>
         </div>
         <div class="width-20 margin-l-15px flex gap-05em">
             <div class="flex column pointer hover-b color-g-b center-center smaller-f width-80px ">
-                <mat-icon >apps</mat-icon>
+                <mat-icon>apps</mat-icon>
                 <div class="flex center-center">
                     <small class=" poppins text-center">Business</small>
                     <mat-icon>arrow_drop_down</mat-icon>
                 </div>
             </div>
             <div>
-                <small class="pointer poppins text-center d-block color-brown underline">Unlock Premium 1 month free</small>
+                <small class="pointer poppins text-center d-block color-brown underline">Unlock Premium 1 month
+                    free</small>
             </div>
         </div>
     </div>

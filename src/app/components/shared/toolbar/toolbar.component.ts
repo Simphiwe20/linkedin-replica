@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { Router } from '@angular/router';
+import { ProfileComponent } from '../../menus/profile/profile.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [ MatIconModule, MatInputModule, RouterModule],
+  imports: [ MatIconModule, MatInputModule, RouterModule, MatMenuModule, ProfileComponent],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
